@@ -11,9 +11,8 @@ This is my repository for Udacity's  project#3 using Udacity starter code.
 - Enimies cross the screen with different speed;
 - Hero can collide with enimies;
 - Hero-enimy collision resets the game;
-- When player wins a modal window showing a replay button.
+- When player wins a modal window showing a replay button
 
-sample
 
 
 ## Instructions to refresh code from VSC to GitHub
