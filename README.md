@@ -3,7 +3,7 @@
 This is my repository for Udacity's  project#3 using Udacity starter code.
 
 
-[Live version of the game](https://tatianaweb.github.io/Classic-Arcade-Game/)
+[Live version of the game](https://tatianaweb.github.io/Arcade_Game/)
 
 ## Game Specifications
 
