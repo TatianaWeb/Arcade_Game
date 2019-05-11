@@ -25,14 +25,14 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-//Hero class
+// Hero class
  class Hero {
      constructor() {
          this.sprite = 'images/char-princess-girl.png';
          this.step = 101;
          this.jump = 83;
          this.startX = this.step * 2;
-         this.startY = (this.jump * 4) + 55;
+         this.startY = (this.jump * 5) - 20;
          this.x = this.startX;
          this.y = this.startY;
          this.vicory = false;

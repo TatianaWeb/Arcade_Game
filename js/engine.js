@@ -1,10 +1,11 @@
+// Canvas and variables
+
 var Engine = (function(global) {
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime,
-        id;
+        lastTime;        
 
     const modal = document.querySelector('.modal_bg');
     const replay = document.querySelector(newPlay());
@@ -13,6 +14,7 @@ var Engine = (function(global) {
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
+// Game loop
     function main() {
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
@@ -35,16 +37,17 @@ var Engine = (function(global) {
             modal.classList.toggle('hide');
         }
         else {
-            id = win.requestAnimationFrame(main);
+            win.requestAnimationFrame(main);
         }
     }
-
+// Initial setup
     function init() {
         reset();
         lastTime = Date.now();
         main();
     }
 
+// Update allEnemies
     function update(dt) {
         updateEntities(dt);
     }
@@ -56,6 +59,7 @@ var Engine = (function(global) {
         player.update();
     }
 
+// Loop the game engine
     function render() {
         var rowImages = [
                 'images/water-block.png',   // Top row is water
@@ -69,6 +73,7 @@ var Engine = (function(global) {
             numCols = 5,
             row, col;
 
+// Clear existin canvas
         ctx.clearRect(0,0,canvas.width,canvas.height);
 
         for (row = 0; row < numRows; row++) {
@@ -89,18 +94,19 @@ var Engine = (function(global) {
     function reset() {
     }
 
+// Load all of the images
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png',
         'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
     global.ctx = ctx;
 })(this);
+
 function newPlay() {
     return '.modal_button';
 }
