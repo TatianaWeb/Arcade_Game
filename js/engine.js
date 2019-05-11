@@ -25,8 +25,7 @@ var Engine = (function(global) {
 
         lastTime = now;
         
-        replay.addEventListener('click', event => {
-            const clickTarget = event.target;
+        replay.addEventListener('click', function() {
             modal.classList.toggle('hide');
             player.reset();
             player.victory = false;
