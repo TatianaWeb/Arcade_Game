@@ -5,7 +5,8 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;        
+        lastTime,
+        id;        
 
     const modal = document.querySelector('.modal_bg');
     const replay = document.querySelector(newPlay());
@@ -37,7 +38,7 @@ var Engine = (function(global) {
             modal.classList.toggle('hide');
         }
         else {
-            win.requestAnimationFrame(main);
+            id = win.requestAnimationFrame(main);
         }
     }
 // Initial setup

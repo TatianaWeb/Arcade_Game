@@ -35,7 +35,7 @@ Enemy.prototype.render = function() {
          this.startY = (this.jump * 4) + 55;
          this.x = this.startX;
          this.y = this.startY;
-         this.vicory = false;
+         this.victory = false;
      }
      render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -69,9 +69,9 @@ Enemy.prototype.render = function() {
              if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2)) {
                  this.reset();
              }
-//            if(this.y === 55) {
-//             this.victory = true; 
-//             }
+            if(this.y === 55) {
+             this.victory = true; 
+             }
          }
      }
      reset () {
