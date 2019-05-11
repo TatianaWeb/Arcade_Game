@@ -32,7 +32,7 @@ Enemy.prototype.render = function() {
          this.step = 101;
          this.jump = 83;
          this.startX = this.step * 2;
-         this.startY = (this.jump * 5) - 20;
+         this.startY = (this.jump * 4) + 55;
          this.x = this.startX;
          this.y = this.startY;
          this.vicory = false;
@@ -48,7 +48,7 @@ Enemy.prototype.render = function() {
                 }    
                 break;
             case 'up':
-                if (this.y > this.jump - 20) {
+                if (this.y > 0) {
                     this.y -= this.jump;
                 }
                 break;             
@@ -69,9 +69,9 @@ Enemy.prototype.render = function() {
              if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2)) {
                  this.reset();
              }
-             if(this.y === 55) {
-                this.victory = true; 
-             }
+//            if(this.y === 55) {
+//             this.victory = true; 
+//             }
          }
      }
      reset () {
